@@ -1,0 +1,258 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+//This function decomposes a number.
+void Decompose(int decomposing, int length) {
+    if (decomposing <= 2000000000) {
+        cout << "\nNumber in Decomposed/Expanded Form:\n";
+        cout << "===================================================" << endl;
+        cout << decomposing << " = ";
+        for (int i = 0; i < length; i++) {
+            int x = decomposing % 10;
+            decomposing = decomposing / 10;
+
+            if (i == 0) {
+                cout << x << " + ";
+            }
+            else if (i == 1) {
+                cout << x * 10 << " + ";
+            }
+            else if (i == 2) {
+                cout << x * 100 << " + ";
+            }
+            else if (i == 3) {
+                cout << x * 1000 << " + ";
+            }
+            else if (i == 4) {
+                cout << x * 10000 << " + ";
+            }
+            else if (i == 5) {
+                cout << x * 100000 << " + ";
+            }
+            else if (i == 6) {
+                cout << x * 1000000 << " + ";
+            }
+            else if (i == 7) {
+                cout << x * 10000000 << " + ";
+            }
+            else if (i == 8) {
+                cout << x * 100000000 << " + ";
+            }
+            else if (i == 9){
+                cout << x * 1000000000 << endl;
+            }
+        }
+    }
+    else {
+        cout << "Invalid number! Exiting program..." << endl;
+        exit(0);
+    } cout << "===================================================" << endl;
+}
+
+//This function shows the place value of a number.
+void PlaceValue(int pValue, int length) {
+    if (pValue <= 2000000000) {
+        cout << "===================================================" << endl;
+        cout << "Here is the place value of the number " << pValue << ":\n" << endl;
+        for (int i = 0; i < length; i++) {
+            int x = pValue % 10;
+            pValue = pValue / 10;
+
+            if (i == 0) {
+                cout << x << " in the ones place has a place value of: " << x << endl;
+            }
+            else if (i == 1) {
+                cout << x << " in the tens place has a place value of: " << x * 10 << endl;
+            }
+            else if (i == 2) {
+                cout << x << " in the hundreds place has a place value of: " << x * 100 << endl;
+            }
+            else if (i == 3) {
+                cout << x << " in the thousands place has a place value of: " << x * 1000 << endl;
+            }
+            else if (i == 4) {
+                cout << x << " in the ten thousands place has a place value of: " << x * 10000 << endl;
+            }
+            else if (i == 5) {
+                cout << x << " in the hundred thousands place has a place value of: " << x * 100000 << endl;
+            }
+            else if (i == 6) {
+                cout << x << " in the millions place has a place value of: " << x * 1000000 << endl;
+            }
+            else if (i == 7) {
+                cout << x << " in the ten millions place has a place value of: " << x * 10000000 << endl;
+            }
+            else if (i == 8) {
+                cout << x << " in the hundred millions place has a place value of: " << x * 100000000 << endl;
+            }
+            else if (i == 9) {
+                cout << x << " in the billions place has a place value of: " << x * 1000000000 << endl;
+            }
+        } cout << "===================================================" << endl;
+    }
+    else {
+        cout << "Invalid number! Exiting program..." << endl;
+        exit(0);
+    }
+}
+
+//This number will round a number to certain increments.
+void Rounding(int num) {
+    if (num <= 2000000000) {
+        int a = (num % 10);
+        int b = (num % 100);
+        int c = (num % 1000);
+        int d = (num % 10000);
+        int e = (num % 100000);
+        int f = (num % 1000000);
+        int g = (num % 10000000);
+        int h = (num % 100000000);
+        int i = (num % 1000000000);
+
+        cout << "===================================================" << endl;
+        //rounding to tens
+        if (a > 4) {
+            cout << "Rounding to the nearest ten: " << (num/10) * 10 + 10 << endl;
+        }
+        else {
+            cout << "Rounding to the nearest ten: " << (num/10) * 10 << endl;
+        }
+
+        //rounding to hundreds
+        if (b > 49) {
+            cout << "Rounding to the nearest hundred: " << (num/100) * 100 + 100 << endl;
+        }
+        else {
+            cout << "Rounding to the nearest hundred: " << (num/100) * 100 << endl;
+        }
+
+        //rounding to thousands
+        if (c > 499) {
+            cout << "Rounding to the nearest thousand: " << (num/1000) * 1000 + 1000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest thousand: " << (num/1000) * 1000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (d > 4999) {
+            cout << "Rounding to the nearest ten thousand: " << (num/10000) * 10000 + 10000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest ten thousand: " << (num/10000) * 10000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (e > 49999) {
+            cout << "Rounding to the nearest hundred thousand: " << (num/100000) * 100000 + 100000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest hundred thousand: " << (num/100000) * 100000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (f > 499999) {
+            cout << "Rounding to the nearest million: " << (num/1000000) * 1000000 + 1000000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest million: " << (num/1000000) * 1000000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (g > 4999999) {
+            cout << "Rounding to the nearest ten million: " << (num/10000000) * 10000000 + 10000000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest ten million: " << (num/10000000) * 10000000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (h > 49999999) {
+            cout << "Rounding to the nearest hundred million: " << (num/100000000) * 100000000 + 100000000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest hundred million: " << (num/100000000) * 100000000 << endl;
+        }
+
+        //rounding to ten thousands
+        if (i > 499999999) {
+            cout << "Rounding to the nearest billion: " << (num/1000000000) * 1000000000 + 1000000000 << endl;
+        }
+        else {
+           cout << "Rounding to the nearest billion: " << (num/1000000000) * 1000000000 << endl;
+        }
+    }
+    else {
+        cout << "Invalid number! Exiting program..." << endl;
+        exit(0);
+    } cout << "===================================================" << endl;
+}
+
+//This number will calculate 1, 10, and 100 more and less.
+void MoreOrLess(int num) {
+    cout << "===================================================" << endl;
+    cout << "1 More: " << num << " + " << "1 = " << num + 1 << endl;
+    cout << "1 Less: " << num << " - " << "1 = " << num - 1 << endl;
+    cout << "10 More: " << num << " + " << "10 = " << num + 10 << endl;
+    cout << "10 Less: " << num << " - " << "10 = " << num - 10 << endl;
+    cout << "100 More: " << num << " + " << "100 = " << num + 100 << endl;
+    cout << "100 Less: " << num << " - " << "100 = " << num - 100 << endl;
+    cout << "===================================================" << endl;
+}
+
+int main() {
+    char choice;
+    int D, PV, R, MoL;
+
+    while ((choice >= 1) || (choice < 5)) {
+
+        cout << "---------------------" << endl;
+        cout << "  Number Value Menu  " << endl;
+        cout << "---------------------" << endl;
+        cout << " 1) Show Number in Expanded/Decomposed Form" << endl;
+        cout << " 2) Show Place Value" << endl;
+        cout << " 3) Rounding a Number" << endl;
+        cout << " 4) More and Less" << endl;
+        cout << " 5) Quit the Program" << endl;
+        cout << "\nMake your selection: ";
+        cin >> choice;
+
+        switch(choice) {
+
+        case '1':
+            cout << "\nEnter a number, we will break the number apart," << endl;
+            cout << "and show it in Decomposed Form: ";
+            cin >> D;
+            Decompose(D, 10);
+            break;
+
+        case '2':
+            cout << "\nEnter a number to show the place value of your chosen number: ";
+            cin >> PV;
+            PlaceValue(PV, 10);
+            break;
+
+        case '3':
+            cout << "\nEnter a number to show where it rounds to the nearest 10 and up to the billions place: ";
+            cin >> R;
+            Rounding(R);
+            break;
+
+        case '4':
+            cout << "Enter a Number: ";
+            cin >> MoL;
+            MoreOrLess(MoL);
+            break;
+
+        case '5':
+            cout << "\nExiting the program...";
+            exit(0);
+
+        default:
+            cout << "Choice not detected, try again.\n" << endl;
+        }
+    }
+    return 0;
+}
